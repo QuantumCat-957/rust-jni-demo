@@ -21,7 +21,11 @@ class MainActivity : ComponentActivity() {
             DemoTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     val rustGreetings = RustGreetings()
-                    val name = rustGreetings.sayHello("Android");
+                    val response = RustGreetings.RustResponse()
+                    val name = rustGreetings.sayHello("Android", response);
+                    println("Response Code: ${response.code}")
+                    println("Response Message: ${response.message}")
+                    println("Response Result: ${response.result?.contentToString()}")
                     Greeting(
                             name = name,
                             modifier = Modifier.padding(innerPadding)

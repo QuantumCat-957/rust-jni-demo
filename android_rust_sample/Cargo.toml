@@ -11,5 +11,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 jni = { version = "0.21.1", default-features = false }
-log = "0.4"
-android_logger = "0.9"
+thiserror = "1"
